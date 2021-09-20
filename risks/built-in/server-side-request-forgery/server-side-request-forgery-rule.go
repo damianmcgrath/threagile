@@ -1,7 +1,7 @@
 package server_side_request_forgery
 
 import (
-	"github.com/threagile/threagile/model"
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func Category() model.RiskCategory {

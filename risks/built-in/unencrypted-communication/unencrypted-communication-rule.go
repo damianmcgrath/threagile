@@ -1,7 +1,7 @@
 package unencrypted_communication
 
 import (
-	"github.com/threagile/threagile/model"
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func Category() model.RiskCategory {

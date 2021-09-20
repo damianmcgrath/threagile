@@ -1,7 +1,7 @@
 package sql_nosql_injection
 
 import (
-	"github.com/threagile/threagile/model"
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func Category() model.RiskCategory {

@@ -1,7 +1,7 @@
 package wrong_communication_link_content
 
 import (
-	"github.com/threagile/threagile/model"
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func Category() model.RiskCategory {

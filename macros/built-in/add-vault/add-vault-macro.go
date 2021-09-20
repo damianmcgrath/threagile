@@ -2,9 +2,10 @@ package add_vault
 
 import (
 	"fmt"
-	"github.com/threagile/threagile/model"
 	"sort"
 	"strings"
+
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func GetMacroDetails() model.MacroDetails {

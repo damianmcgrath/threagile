@@ -1,7 +1,7 @@
 package service_registry_poisoning
 
 import (
-	"github.com/threagile/threagile/model"
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func Category() model.RiskCategory {

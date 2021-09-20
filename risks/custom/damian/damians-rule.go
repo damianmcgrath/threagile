@@ -4,24 +4,24 @@ import (
 	"github.com/damianmcgrath/threagile/model"
 )
 
-type customRiskRule string
+type damiansRiskRule string
 
 // exported as symbol (here simply as variable to interface to bundle many functions under one symbol) named "CustomRiskRule"
-var CustomRiskRule customRiskRule
+var CustomRiskRule damiansRiskRule
 
-func (r customRiskRule) Category() model.RiskCategory {
+func (r damiansRiskRule) Category() model.RiskCategory {
 	return model.RiskCategory{
-		Id:                         "demo",
-		Title:                      "Just a Demo",
-		Description:                "Demo Description",
-		Impact:                     "Demo Impact",
-		ASVS:                       "Demo ASVS",
+		Id:                         "damian",
+		Title:                      "Damians Demo",
+		Description:                "Damians Demo Description",
+		Impact:                     "Global Catastrophe",
+		ASVS:                       "Damians ASVS",
 		CheatSheet:                 "https://example.com",
-		Action:                     "Demo Action",
-		Mitigation:                 "Demo Mitigation",
-		Check:                      "Demo Check",
+		Action:                     "Damians Demo Action",
+		Mitigation:                 "Damians Demo Mitigation",
+		Check:                      "Damians Demo Check",
 		Function:                   model.Development,
-		STRIDE:                     model.Tampering,
+		STRIDE:                     model.Spoofing,
 		DetectionLogic:             "Demo Detection",
 		RiskAssessment:             "Demo Risk Assessment",
 		FalsePositives:             "Demo False Positive.",
@@ -30,25 +30,27 @@ func (r customRiskRule) Category() model.RiskCategory {
 	}
 }
 
-func (r customRiskRule) SupportedTags() []string {
-	return []string{"demo tag"}
+func (r damiansRiskRule) SupportedTags() []string {
+	return []string{"damian"}
 }
 
-func (r customRiskRule) GenerateRisks() []model.Risk {
+func (r damiansRiskRule) GenerateRisks() []model.Risk {
 	risks := make([]model.Risk, 0)
 	for _, techAsset := range model.ParsedModelRoot.TechnicalAssets {
-		risks = append(risks, createRisk(techAsset))
+		if techAsset.IsTaggedWithAny("damian") {
+			risks = append(risks, createDamianRisk(techAsset))
+		}
 	}
 	return risks
 }
 
-func createRisk(technicalAsset model.TechnicalAsset) model.Risk {
+func createDamianRisk(technicalAsset model.TechnicalAsset) model.Risk {
 	risk := model.Risk{
 		Category:                     CustomRiskRule.Category(),
 		Severity:                     model.CalculateSeverity(model.VeryLikely, model.MediumImpact),
 		ExploitationLikelihood:       model.VeryLikely,
-		ExploitationImpact:           model.MediumImpact,
-		Title:                        "<b>Demo</b> risk at <b>" + technicalAsset.Title + "</b>",
+		ExploitationImpact:           model.VeryHighImpact,
+		Title:                        "<b>Damian's demo</b> risk at <b>" + technicalAsset.Title + "</b>",
 		MostRelevantTechnicalAssetId: technicalAsset.Id,
 		DataBreachProbability:        model.Possible,
 		DataBreachTechnicalAssetIDs:  []string{technicalAsset.Id},
