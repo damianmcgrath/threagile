@@ -1,8 +1,8 @@
 package missing_authentication_second_factor
 
 import (
-	"github.com/threagile/threagile/model"
-	"github.com/threagile/threagile/risks/built-in/missing-authentication"
+	"github.com/damianmcgrath/threagile/model"
+	missing_authentication "github.com/damianmcgrath/threagile/risks/built-in/missing-authentication"
 )
 
 func Category() model.RiskCategory {

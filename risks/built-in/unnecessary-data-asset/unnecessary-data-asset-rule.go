@@ -1,8 +1,9 @@
 package unnecessary_data_asset
 
 import (
-	"github.com/threagile/threagile/model"
 	"sort"
+
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func Category() model.RiskCategory {

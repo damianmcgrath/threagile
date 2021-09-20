@@ -1,7 +1,7 @@
 package wrong_trust_boundary_content
 
 import (
-	"github.com/threagile/threagile/model"
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func Category() model.RiskCategory {

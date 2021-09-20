@@ -1,7 +1,7 @@
 package dos_risky_access_across_trust_boundary
 
 import (
-	"github.com/threagile/threagile/model"
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func Category() model.RiskCategory {

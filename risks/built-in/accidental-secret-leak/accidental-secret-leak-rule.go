@@ -1,7 +1,7 @@
 package accidental_secret_leak
 
 import (
-	"github.com/threagile/threagile/model"
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func Category() model.RiskCategory {
@@ -31,7 +31,7 @@ func Category() model.RiskCategory {
 }
 
 func SupportedTags() []string {
-	return []string{"git", "nexus"}
+	return []string{"git", "nexus", "demo"}
 }
 
 func GenerateRisks() []model.Risk {
@@ -39,7 +39,7 @@ func GenerateRisks() []model.Risk {
 	for _, id := range model.SortedTechnicalAssetIDs() {
 		techAsset := model.ParsedModelRoot.TechnicalAssets[id]
 		if !techAsset.OutOfScope &&
-			(techAsset.Technology == model.SourcecodeRepository || techAsset.Technology == model.ArtifactRegistry) {
+			(techAsset.Technology == model.SourcecodeRepository || techAsset.Technology == model.ArtifactRegistry || techAsset.IsTaggedWithAny("demo")) {
 			var risk model.Risk
 			if techAsset.IsTaggedWithAny("git") {
 				risk = createRisk(techAsset, "Git", "Git Leak Prevention")

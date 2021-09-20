@@ -1,8 +1,9 @@
 package unguarded_access_from_internet
 
 import (
-	"github.com/threagile/threagile/model"
 	"sort"
+
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func Category() model.RiskCategory {

@@ -1,9 +1,10 @@
 package seed_risk_tracking
 
 import (
-	"github.com/threagile/threagile/model"
 	"sort"
 	"strconv"
+
+	"github.com/damianmcgrath/threagile/model"
 )
 
 func GetMacroDetails() model.MacroDetails {
